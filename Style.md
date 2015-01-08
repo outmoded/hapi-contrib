@@ -356,14 +356,14 @@
   var example = function () {
 
       return value;
-  }
+  };
 
   // Wrong
 
   var example = function() {
 
       return value;
-  }
+  };
   ```
 
   - No space between function name and `(` when invoking a function
