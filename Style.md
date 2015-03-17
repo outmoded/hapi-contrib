@@ -671,11 +671,51 @@
 
 ### Module globals
 
-  - Every module can only have two top level globals:
+  - Every module can only have two top level globals (except for imported modules):
     - `exports` - defined automatically by node
     - `internals` - must be declared as an object at the top of each module immediate following the `require` section
   - Any variable global to the module must be a property of `internals`, including constants
   - If a module has automatically executing code, it must be contained within a function (using the `internals` namespace) and called at the top of the module after the `internals` declaration
+  
+  ````javascript
+  // Right
+  
+  var Hapi = require('hapi');
+  var Hoek = require('hoek');
+  var Package = require('./package.json');
+  
+  var internals = {
+      package: Package,
+      foo: 'bar'
+  };
+  
+  internals.automaticly();
+  
+  internals.automaticly = function () {};
+  
+  // Also right
+  
+  var Hapi = require('hapi);
+  
+  var internals = {};
+  
+  inernals.package = require('./package.json');
+  
+  // Wrong
+  
+  var hapi = require('hapi');
+  
+  var foo = 'bar';
+  
+  var internals = {
+      Foo: 'bar'
+  };
+  
+  ...
+  
+  var Hoek = require('hoek');
+  
+  ````
 
 ### Variable names
 
