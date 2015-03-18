@@ -675,7 +675,7 @@
     - `exports` - defined automatically by node
     - `internals` - must be declared as an object at the top of each module immediate following the `require` section
   - Any variable global to the module must be a property of `internals`, including constants
-  - If a module has automatically executing code, it must be contained within a function (using the `internals` namespace) and called at the top of the module after the `internals` declaration
+  - If a module has automatically executing code, it must be contained within a function (using the `internals` namespace) and called at the top of the module after the `internals` declaration.
   
   ````javascript
   // Right
@@ -685,13 +685,16 @@
   var Package = require('./package.json');
   
   var internals = {
-      package: Package,
       foo: 'bar'
   };
   
-  internals.automaticly();
+  internals.init = function () {
   
-  internals.automaticly = function () {};
+      var server = new Hapi.Server();
+      ...
+  };
+  
+  internals.init();
   
   // Also right
   
@@ -700,20 +703,29 @@
   var internals = {};
   
   inernals.package = require('./package.json');
+  internals.foo = 'bar';
+  internals.init = function () {
+     
+     var server = new Hapi.server();
+     ...
+  };
+  
+  internals.init();
   
   // Wrong
   
-  var hapi = require('hapi');
+  var hapi = require('hapi'); // Use uppercase name
   
-  var foo = 'bar';
+  var foo = 'bar'; // No global vars outside of internals
   
   var internals = {
-      Foo: 'bar'
+      Foo: 'bar' // Don't use uppercase vars inside internals
   };
   
+  var server = new Hapi.Server(); // No global vars outside of internals and exports / Set up your module inside an init() function
   ...
   
-  var Hoek = require('hoek');
+  var Hoek = require('hoek'); // Declare modules at the top of the module
   
   ````
 
