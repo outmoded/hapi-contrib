@@ -671,11 +671,63 @@
 
 ### Module globals
 
-  - Every module can only have two top level globals:
+  - Every module can only have two top level globals (except for imported modules):
     - `exports` - defined automatically by node
     - `internals` - must be declared as an object at the top of each module immediate following the `require` section
   - Any variable global to the module must be a property of `internals`, including constants
-  - If a module has automatically executing code, it must be contained within a function (using the `internals` namespace) and called at the top of the module after the `internals` declaration
+  - If a module has automatically executing code, it must be contained within a function (using the `internals` namespace) and called at the top of the module after the `internals` declaration.
+  
+  ````javascript
+  // Right
+  
+  var Hapi = require('hapi');
+  var Hoek = require('hoek');
+  var Package = require('./package.json');
+  
+  var internals = {
+      foo: 'bar'
+  };
+  
+  internals.init = function () {
+  
+      var server = new Hapi.Server();
+      ...
+  };
+  
+  internals.init();
+  
+  // Also right
+  
+  var Hapi = require('hapi);
+  
+  var internals = {};
+  
+  inernals.package = require('./package.json');
+  internals.foo = 'bar';
+  internals.init = function () {
+     
+     var server = new Hapi.server();
+     ...
+  };
+  
+  internals.init();
+  
+  // Wrong
+  
+  var hapi = require('hapi'); // Use uppercase name
+  
+  var foo = 'bar'; // No global vars outside of internals
+  
+  var internals = {
+      Foo: 'bar' // Don't use uppercase vars inside internals
+  };
+  
+  var server = new Hapi.Server(); // No global vars outside of internals and exports / Set up your module inside an init() function
+  ...
+  
+  var Hoek = require('hoek'); // Declare modules at the top of the module
+  
+  ````
 
 ### Variable names
 
