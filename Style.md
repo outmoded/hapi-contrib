@@ -657,8 +657,8 @@
 
   - Variable should be indented to the first character of the value in the first line
   ```javascript
-  var message = "hello" +
-                " and welcome";
+  var message = 'hello' +
+                ' and welcome';
   ```
 
 ## Node
@@ -698,7 +698,7 @@
   
   // Also right
   
-  var Hapi = require('hapi);
+  var Hapi = require('hapi');
   
   var internals = {};
   
