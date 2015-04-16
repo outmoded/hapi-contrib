@@ -17,7 +17,7 @@
 
 #### Variable declarations
 
-  - Declare on first use, not at top of function (with the exception of [self](#prototype-members))
+  - Declare on first use, not at top of function; [self](#prototype-members) being an exception
   - Do not chain declarations unless inside `for` parentheses (repeat `var` for each variable in a separate statement)
   - Give descriptive names
     - Do not use similar names or synonyms for different variables unless following a convention
