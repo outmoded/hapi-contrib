@@ -702,7 +702,7 @@
   
   var internals = {};
   
-  inernals.package = require('./package.json');
+  internals.package = require('./package.json');
   internals.foo = 'bar';
   internals.init = function () {
      
