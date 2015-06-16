@@ -4,7 +4,7 @@ Please be kind and courteous. There's no need to be mean or rude. Respect that p
 
 ## Purpose
 
-A primary goal of the hapi.js project is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
+A primary goal of the hapi.js project is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, gender identity, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
 
 This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behavior. We invite all those who participate in the hapi.js project to help us create safe and positive experiences for everyone.
 
@@ -45,7 +45,7 @@ The following behaviors are considered harassment and are unacceptable within ou
 - Sexist, racist, homophobic, transphobic, ableist or otherwise discriminatory jokes and language.
 - Posting or displaying sexually explicit or violent material.
 - Posting or threatening to post other people's personally identifying information ("doxing").
-- Personal insults, particularly those related to gender, sexual orientation, race, religion, or disability.
+- Personal insults, particularly those related to gender, gender identity, sexual orientation, race, religion, or disability.
 - Inappropriate photography or recording.
 - Inappropriate physical contact. You should have someone's consent before touching them.
 - Unwelcome sexual attention. This includes, sexualized comments or jokes, inappropriate touching, groping, and
