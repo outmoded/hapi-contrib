@@ -115,12 +115,9 @@
 
 #### Enforcing new on Constructor
 
-  - Use this.constructor === to check if a constructor function was called with new
-  ```javascript
-  // Right
-  Hoek.assert(this.constructor === Server, 'Server must be instantiated using new');
+  - Use `this instanceof` to check if a constructor function was called with new. (This allows for future prototypical inheritance.)
 
-  // Wrong
+  ```javascript
   Hoek.assert(this instanceof Server, 'Server must be instantiated using new');
   ```
 
