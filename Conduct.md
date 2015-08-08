@@ -12,7 +12,7 @@ A supplemental goal of this Code of Conduct is to increase open source citizensh
 
 ## Enforcement
 
-This Code of Conduct is maintained and enforced by the hapi.js Code of Conduct committee. The committee is subject to the same conduct rules detailed here. 
+This Code of Conduct is maintained and enforced by the hapi.js Code of Conduct committee. The committee is subject to the same conduct rules detailed here. Until the committee is formed, the policy will be enforced by members of the core contributors group.
 
 ## Scope
 
@@ -28,7 +28,7 @@ A person's past contribution to the hapi.js project will not be considered when 
 
 The following behaviors are expected and requested of all community members:
 
-- Participate in an authentic and active way. In doing so, you contribute to the health and longevity of this community.
+- Participate in an productive and active way. In doing so, you contribute to the health and longevity of this community.
 - Exercise consideration and respect in your speech and actions.
 - Attempt collaboration before conflict.
 - Refrain from demeaning, discriminatory, or harassing behavior and speech.
@@ -69,7 +69,7 @@ If a community member engages in unacceptable behavior, the community organizers
 You may contact one or more of the following:
 - [Eran Hammer](eran@hammer.io)
 - [Emily Rose](nexxy@symphonysubconscious.com)
-- Any member of the hapi.js Code of Conduct committee
+- Any member of the hapi.js Code of Conduct committee (once established)
 - Anonymously using [this form](https://docs.google.com/forms/d/14nhzflhhLld58ynDl5gUPl-_i0M6z-z34-Ct02DmDXM/viewform?c=0&w=1)
 
 ## License and attribution
