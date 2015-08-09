@@ -29,3 +29,11 @@ A sponsorship package should include the following:
 Module Sponsorships should be limited to:
 * Each module should only have one sponsor at a time.
 * A module should not have more than one sponsor a month on average.
+
+Lead maintainers seeking compensation in exchange for sponsorship should make sure they understand
+the legal and tax ramifications it may have. They are also encouraged to make any such transactions
+limited to the placement of the sponsor information on the README.md (since the rest of the above
+benefits require others to assist and may be outside the control of the lead maintainer). This will
+also remove potential issues in the future about copyright and other intellectual property claims
+by the sponsor (e.g making it clear that the sponsorship does not imply payment for any work on the
+module).
