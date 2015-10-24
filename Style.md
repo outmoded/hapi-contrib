@@ -4,6 +4,26 @@
 
 ### Language
 
+#### Strict Mode
+
+  - The first line of every file should be `'use strict';`. If the file contains a shebang, strict mode should be enabled on the second line.
+  - The strict mode directive should be followed by a blank line.
+  ```javascript
+  'use strict';
+
+  // Right
+  console.log('even when not required');
+
+  #!/usr/bin/env node
+  'use strict';
+
+  // Also right
+
+  // Wrong
+  'use strict';
+  console.log('even when not required')
+  ```
+
 #### Semicolon
 
   - Always end statements with `;`
@@ -17,8 +37,11 @@
 
 #### Variable declarations
 
+  - Any variable that is only assigned once should be defined using `const`.
+  - Any variable that is assigned multiple times should be defined using `let`.
+  - Variables should not be declared using `var`.
   - Declare on first use, not at top of function; [self](#prototype-members) being an exception
-  - Do not chain declarations unless inside `for` parentheses (repeat `var` for each variable in a separate statement)
+  - Do not chain declarations unless inside `for` parentheses (repeat `const` or `let` for each variable in a separate statement)
   - Give descriptive names
     - Do not use similar names or synonyms for different variables unless following a convention
     - `for...in` iterators should use descriptive names
@@ -49,25 +72,26 @@
 #### For loops
 
   - Iterator variable should be declared inside the `for` parentheses, unless already defined
+  - Iterator variables should be named `i` if possible. Nested `for` loops use `j`, `k`, etc.
   - Use `for` with arrays, `for...in` for objects (and always check `hasOwnProperty()`)
-  - When iterating over a fixed or calculated size, assign size to a variable inside the `for` declaration and use iterator variable name with `l` suffix
   - Always `++i`, never `i++`
 
   ```javascript
   // Right
 
-  var name = 'john';
+  const name = 'john';
 
-  for (var i = 0, il = name.length; i < il; ++i) {
+  for (let i = 0; i < name.length; ++i) {
       console.log(name[i]);
   }
 
   // Wrong
 
-  var position;
-  var name = 'john' ;
+  let position;
+  const name = 'john' ;
+  const len = name.length;
 
-  for (position = 0; position < name.length; position++) {
+  for (position = 0; position < len; position++) {
       console.log(name[position]) ;
   }
   ```
@@ -87,7 +111,7 @@
   ```javascript
   Example.prototype.method = function () {
 
-      var self = this;
+      const self = this;
 
       call(123, function (err) {
 
@@ -99,11 +123,18 @@
 #### Function declaration
 
   - Declare functions via assignment
+  - Arrow function arguments must be enclosed in parentheses
+  - Arrow function bodies must be enclosed in curly braces and use explicit `return`s
   ``` javascript
   // Right
 
-  var method = function () {
+  const method = function () {
 
+  };
+
+  const arrow = (foo) => {
+
+      return bar;
   };
 
   // Wrong
@@ -111,6 +142,8 @@
   function method() {
 
   }
+
+  const arrow = foo => bar;
   ```
 
 #### Enforcing new on Constructor
@@ -152,10 +185,10 @@
   - Always `'` never `"`
   ```javascript
   // Right
-  var string = 'text in single quotes';
+  const string = 'text in single quotes';
 
   // Wrong
-  var string = "text in single quotes";
+  const string = "text in single quotes";
   ```
 
 #### Newlines
@@ -191,24 +224,24 @@
   }
 
   if (condition) {
-      var options = {
+      const options = {
           strict: true
       };
       execute(value, options);
   }
 
-  var empty = {};
+  const empty = {};
 
   // Wrong
 
   if (condition) { execute(value, { strict: true }); }
 
   if (condition) {
-      var options = { strict: true };
+      const options = { strict: true };
       execute(value, options);
   }
 
-  var empty = {
+  const empty = {
   };
   ```
 
@@ -222,14 +255,14 @@
 
   if (condition) {
       value = {
-          func: function () {
+          func: () => {
 
               console.log('example');
           },
           message: 'hello'
       };
 
-      execute(value, function (err) {
+      execute(value, (err) => {
 
           console.log(err);
       });
@@ -242,12 +275,12 @@
 
   if (condition) {
       value = {
-          func: function () {
+          func: () => {
 
               console.log('example');
           }, message: 'hello'
       };
-      execute(value, function (err) {
+      execute(value, (err) => {
 
           console.log(err); }
       );
@@ -279,12 +312,12 @@
           console.log('always');
       }
 
-      execute(123, function (err) {
+      execute(123, (err) => {
 
           console.log(err);
       });
 
-      var empty = {};
+      const empty = {};
   };
 
   // Wrong
@@ -305,11 +338,11 @@
           console.log('always');
       }
 
-      execute(123, function (err) {
+      execute(123, (err) => {
           console.log(err);
       });
 
-      var empty = {
+      const empty = {
       };
   };
   ```
@@ -340,24 +373,24 @@
   - Use one and only one space (when required)
   ```javascript
   // Right
-  var value = calculate(1, 3);
+  const value = calculate(1, 3);
 
   // Wrong
-  var  value =  calculate(1,  3);
+  const  value =  calculate(1,  3);
   ```
 
   - One space between function and `(` when declaring a function
   ```javascript
   // Right
 
-  var example = function () {
+  const example = function () {
 
       return value;
   };
 
   // Wrong
 
-  var example = function() {
+  const example = function() {
 
       return value;
   };
@@ -367,11 +400,11 @@
   ```javascript
   // Right
 
-  var key = example();
+  const key = example();
 
   // Wrong
 
-  var key = example ();
+  const key = example ();
   ```
 
   - No space after `(` or before `)`
@@ -397,7 +430,7 @@
   ```javascript
   // Right
 
-  var obj = {
+  const obj = {
       a: 1,
       b: 2,
       c: 3
@@ -405,7 +438,7 @@
 
   // Wrong
 
-  var obj = {
+  const obj = {
       a : 1,
       b :2,
       c:3
@@ -416,17 +449,17 @@
   ```javascript
   // Right
 
-  var name = 'john';
+  const name = 'john';
 
-  for (var i = 0, il = name.length; i < il; ++i) {
+  for (let i = 0; i < name.length; ++i) {
       console.log(name[i]);
   }
 
   // Wrong
 
-  var name = 'john' ;
+  const name = 'john' ;
 
-  for (var i = 0, il = name.length;i < il ;++i) {
+  for (let i = 0;i < name.length ;++i) {
       console.log(name[i]) ;
   }
   ```
@@ -435,7 +468,7 @@
   ```javascript
   // Right
 
-  for (var book in books) {
+  for (let book in books) {
       if (books.hasOwnProperty(book)) {
           console.log(book.name);
       }
@@ -443,7 +476,7 @@
 
   // Wrong
 
-  for(var book in books) {
+  for(let book in books) {
       if(books.hasOwnProperty(book)) {
           console.log(book.name);
       }
@@ -457,24 +490,24 @@
   ```javascript
   // Right
 
-  var user = { name: 'john', email: 'john@example.com' };
-  var empty = {};
-  var callback = function () { };
+  const user = { name: 'john', email: 'john@example.com' };
+  const empty = {};
+  const callback = () => { };
 
   // Wrong
 
-  var user = {name: 'john', email: 'john@example.com'};
-  var empty = {  };
-  var callback = function () {};
+  const user = {name: 'john', email: 'john@example.com'};
+  const empty = {  };
+  const callback = () => {};
   ```
 
   - No space after `[` and before `]` in inlined arrays
   ```javascript
   // Right
-  var numbers = [1, 2, 3];
+  const numbers = [1, 2, 3];
 
   // Wrong
-  var numbers = [ 1, 2, 3 ];
+  const numbers = [ 1, 2, 3 ];
   ```
 
   - Always space after `//`
@@ -490,19 +523,20 @@
   ```javascript
   // Right
 
-  var numbers = [1, 2, 3];
-  var user = { name: 'john', email: 'john@example.com' };
+  const numbers = [1, 2, 3];
+  const user = { name: 'john', email: 'john@example.com' };
 
-  for (var i = 0, il = name.length; i < il; ++i) {
+  for (let i = 0; i < name.length; ++i) {
       console.log(name[i]);
   }
 
   // Wrong
 
-  var numbers = [1,2 ,3];
-  var user = { name: 'john',email: 'john@example.com' };
+  const numbers = [1,2 ,3];
+  const user = { name: 'john',email: 'john@example.com' };
 
-  for (var i = 0,il = name.length; i < il; ++i) {
+  // This for loop violates the style guide, but illustrates incorrect spacing around a comma
+  for (let i = 0,il = name.length; i < il; ++i) {
       console.log(name[i]);
   }
   ```
@@ -512,15 +546,15 @@
   ```javascript
   // Right
 
-  var a = 1 + 3;
-  var b = 'john' +
+  const a = 1 + 3;
+  const b = 'john' +
           ' ' +
           'doe';
 
   // Wrong
 
-  var a=1+3;
-  var b='john'+
+  const a=1+3;
+  const b='john'+
         ' '+
         'doe';
   ```
@@ -546,7 +580,7 @@
   ```javascript
   // Right
 
-  var message = 'Hello ' +
+  const message = 'Hello ' +
                 'Steve, ' +
                 'How are you?';
 
@@ -558,7 +592,7 @@
 
   // Wrong
 
-  var message = 'Hello '
+  const message = 'Hello '
                 + 'Steve, '
                 + 'How are you?';
 
@@ -588,7 +622,7 @@
   function execute() {
 
       // Initialize state
-      var position = 0;
+      const position = 0;
 
       if (condition) {
           // Return message
@@ -607,7 +641,7 @@
 
       // Print each book's name
 
-      for (var book in books) {
+      for (let book in books) {
 
           // Check for valid properties
 
@@ -654,7 +688,7 @@
 
   - Variable should be indented to the first character of the value in the first line
   ```javascript
-  var message = 'hello' +
+  const message = 'hello' +
                 ' and welcome';
   ```
 
@@ -673,57 +707,57 @@
     - `internals` - must be declared as an object at the top of each module immediate following the `require` section
   - Any variable global to the module must be a property of `internals`, including constants
   - If a module has automatically executing code, it must be contained within a function (using the `internals` namespace) and called at the top of the module after the `internals` declaration.
-  
+
   ````javascript
   // Right
-  
-  var Hapi = require('hapi');
-  var Hoek = require('hoek');
-  var Package = require('./package.json');
-  
-  var internals = {
+
+  const Hapi = require('hapi');
+  const Hoek = require('hoek');
+  const Package = require('./package.json');
+
+  const internals = {
       foo: 'bar'
   };
-  
+
   internals.init = function () {
-  
-      var server = new Hapi.Server();
+
+      const server = new Hapi.Server();
       ...
   };
-  
+
   internals.init();
-  
+
   // Also right
-  
-  var Hapi = require('hapi');
-  
-  var internals = {};
-  
+
+  const Hapi = require('hapi');
+
+  const internals = {};
+
   internals.package = require('./package.json');
   internals.foo = 'bar';
   internals.init = function () {
-     
-     var server = new Hapi.server();
+
+     const server = new Hapi.server();
      ...
   };
-  
+
   internals.init();
-  
+
   // Wrong
-  
-  var hapi = require('hapi'); // Use uppercase name
-  
-  var foo = 'bar'; // No global vars outside of internals
-  
-  var internals = {
+
+  const hapi = require('hapi'); // Use uppercase name
+
+  const foo = 'bar'; // No global vars outside of internals
+
+  const internals = {
       Foo: 'bar' // Don't use uppercase vars inside internals
   };
-  
-  var server = new Hapi.Server(); // No global vars outside of internals and exports / Set up your module inside an init() function
+
+  const server = new Hapi.Server(); // No global vars outside of internals and exports / Set up your module inside an init() function
   ...
-  
-  var Hoek = require('hoek'); // Declare modules at the top of the module
-  
+
+  const Hoek = require('hoek'); // Declare modules at the top of the module
+
   ````
 
 ### Variable names
@@ -733,5 +767,12 @@
 ### Callback
 
   - First argument must always be `err`
+  - Inline callbacks should use arrow functions
   - If a function takes a `callback` argument, it **must** be called on `process.nextTick()`. Otherwise, the argument name **must** be `next` to clearly declare that it may get called on same tick
   - Callbacks should always be called with explicit `return`
+
+### Promises
+
+  - Public interfaces should (not must) return a promise when no callback is provided
+  - Promises should not be used internally
+  - Only native promises are allowed. Third party promise implementations are not allowed
