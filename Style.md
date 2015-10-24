@@ -124,7 +124,7 @@
 
   - Declare functions via assignment
   - Arrow function arguments must be enclosed in parentheses
-  - Arrow function bodies must be enclosed in curly braces and use explicit `return`s
+  - Arrow function bodies must be enclosed in curly braces
   ``` javascript
   // Right
 
