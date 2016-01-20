@@ -292,6 +292,7 @@
   - Empty line after `{`
     - Following a multi-line condition
     - In function scope declarations
+    - In arrow function declarations
 
   ```javascript
   // Right
