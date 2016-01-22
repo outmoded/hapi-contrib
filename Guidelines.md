@@ -15,7 +15,7 @@ Each module should have two markdown files in the root of their repositories wit
   - short example of a common use case (with code)
   - link to API.md
 * API.md
-  API documentation, in a format as similar to the API.md of [the](https://github.com/hapijs/hapi/blob/master/API.md) [other](https://github.com/hapijs/joi/blob/master/API.md) [repo](https://github.com/hapijs/good/blob/master/API.md) as possible
+  - API documentation, in a format as similar to the API.md of [the](https://github.com/hapijs/hapi/blob/master/API.md) [other](https://github.com/hapijs/joi/blob/master/API.md) [repos](https://github.com/hapijs/good/blob/master/API.md) as possible
 
 ## Labels
 
