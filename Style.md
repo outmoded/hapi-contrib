@@ -292,7 +292,7 @@
   - Empty line after `{`
     - Following a multi-line condition
     - In function scope declarations
-    - In arrow function declarations
+    - In arrow function declarations using curly braces
 
   ```javascript
   // Right
