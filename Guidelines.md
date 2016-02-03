@@ -2,6 +2,21 @@
 
 The purpose of this document is to outline procedures and guidelines for the operation of a repository under the [hapijs](https://github.com/hapijs) umbrella. The number of modules and repositories under the [hapijs](https://github.com/hapijs) organization will continue to grow so it is important that every repository has a certain amount of parity. This allows for the community to instantly have a level of familiarity regardless of the repository they are working in.
 
+## Documentation
+
+Each module should have two markdown files in the root of their repositories with the content described below:
+
+* README.md
+  - name of module
+  - build status badges (travis-ci, etc)
+  - name of lead maintainer
+  - sponsorship information, if applicable
+  - short description of the plugin
+  - short example of a common use case (with code)
+  - link to API.md
+* API.md
+  - API documentation, in a format as similar to the API.md of [the](https://github.com/hapijs/hapi/blob/master/API.md) [other](https://github.com/hapijs/joi/blob/master/API.md) [repos](https://github.com/hapijs/good/blob/master/API.md) as possible
+
 ## Labels
 
 Every [hapijs](https://github.com/hapijs) repository should make generous use of labels. Labels help to make triaging issues easier. Below is the list of labels that every repository should be using and a brief explanation of the intent of the label.
@@ -48,6 +63,7 @@ Sometimes one of the [hapijs](https://github.com/hapijs) modules becomes outdate
 If a new maintainer does volunteer, the repository ownership is transfered out of the hapijs organization to the new maintainer. The license must be updated to remove any mention of Walmart or hapijs.
 
 ### Steps to Retire
+
 1. "README.md" is updated with the "Retired" image and the message "No longer being maintained". A link should also be added that points to the last version's "README.md".
 2. Tag all open issues with the "deprecated" tag and then close them. Disable issues globally in the repository settings.
 3. Bump the minor version of the module in "package.json".
