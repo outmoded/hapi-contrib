@@ -67,8 +67,8 @@ If a community member engages in unacceptable behavior, the community organizers
 ## Contact Information
 
 You may contact one or more of the following:
-- [Eran Hammer](eran@hammer.io)
-- [Emily Rose](nexxy@symphonysubconscious.com)
+- [Eran Hammer](mailto:eran@hammer.io)
+- [Emily Rose](mailto:nexxy@symphonysubconscious.com)
 - Any member of the hapi.js Code of Conduct committee (once established)
 - Anonymously using [this form](https://docs.google.com/forms/d/14nhzflhhLld58ynDl5gUPl-_i0M6z-z34-Ct02DmDXM/viewform?c=0&w=1)
 
