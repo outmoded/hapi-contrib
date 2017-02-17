@@ -80,8 +80,9 @@
   // Right
 
   const name = 'john';
+  const nameLength = name.length
 
-  for (let i = 0; i < name.length; ++i) {
+  for (let i = 0; i < nameLength; ++i) {
       console.log(name[i]);
   }
 
@@ -89,9 +90,8 @@
 
   let position;
   const name = 'john' ;
-  const len = name.length;
 
-  for (position = 0; position < len; position++) {
+  for (position = 0; position < name.length; position++) {
       console.log(name[position]) ;
   }
   ```
