@@ -491,13 +491,13 @@
   ```javascript
   // Right
 
-  const user = { name: 'john', email: 'john@example.com' };
+  execute({ name: 'john', email: 'john@example.com' });
   const empty = {};
   const callback = () => { };
 
   // Wrong
 
-  const user = {name: 'john', email: 'john@example.com'};
+  execute({name: 'john', email: 'john@example.com'});
   const empty = {  };
   const callback = () => {};
   ```
@@ -525,7 +525,7 @@
   // Right
 
   const numbers = [1, 2, 3];
-  const user = { name: 'john', email: 'john@example.com' };
+  execute({ name: 'john', email: 'john@example.com' });
 
   for (let i = 0; i < name.length; ++i) {
       console.log(name[i]);
@@ -534,7 +534,7 @@
   // Wrong
 
   const numbers = [1,2 ,3];
-  const user = { name: 'john',email: 'john@example.com' };
+  execute({ name: 'john',email: 'john@example.com' });
 
   // This for loop violates the style guide, but illustrates incorrect spacing around a comma
   for (let i = 0,il = name.length; i < il; ++i) {
