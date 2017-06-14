@@ -604,6 +604,30 @@
   }
   ```
 
+#### Ternary Operators
+
+ - Never begin a line with a ternary operator. If a ternary statement must wrap, indent it further than the previous line by 4 spaces.
+ 
+ ```javascript
+  // Right
+
+  const message = foo === bar ?
+      foo :
+      bar;
+
+  // Wrong
+
+  const message = foo === bar
+      ? foo
+      : bar;
+      
+  // Also Wrong
+  
+  const message = (foo === bar ?
+                  foo :
+                  bar);
+  ```
+
 #### Comments
 
   - Always use `//` unless it's a jsDoc declaration or license header
