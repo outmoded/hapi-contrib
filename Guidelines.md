@@ -28,7 +28,7 @@ Every [hapijs](https://github.com/hapijs) repository should make generous use of
 - `enhancement` - non-breaking changes that would generally require a bump in the minor version number.
 - `help wanted` - issues where the hapijs team is actively requesting community feedback should be tagged with `help wanted`. Issues like, [who is using hapi](https://github.com/hapijs/hapi/issues/1613) or [the joi bug hunt](https://github.com/hapijs/joi/issues/281) are recent examples of `help wanted` issues.
 - `maintenance` - tasks that are related to refactoring or other code changes that don't fix bugs or add enhancements
-- `new contributor` - tasks that are sufficiently small and easy for new contributors to complete, and which collaborators don't mind assisting new contributors in completing.
+- `good first issue` - tasks that are sufficiently small and easy for new contributors to complete, and which collaborators don't mind assisting new contributors in completing.
 - `non-issue` - this label is used when a user reports something that they perceive as a bug in a hapijs module but ultimately ends up being a user error. Often, issues tagged with `non-issue` will lead to updated documentation or additional validation.
 - `question` - generic label for user questions.
 - `release notes` - if the changes to a module are really broad, a new issue should be created and labeled with `release notes`. The issue should document what the changes are, how it impacts existing code and how to migrate to the next version.
