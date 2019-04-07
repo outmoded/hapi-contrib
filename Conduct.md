@@ -4,15 +4,15 @@ Please be kind and courteous. There's no need to be mean or rude. Respect that p
 
 ## Purpose
 
-A primary goal of the hapi.js project is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, gender identity, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
-
 This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behavior. We invite all those who participate in the hapi.js project to help us create safe and positive experiences for everyone.
+
+A primary goal of the hapi.js project is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, gender identity, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
 
 A supplemental goal of this Code of Conduct is to increase open source citizenship by encouraging participants to recognize and strengthen the relationships between our actions and their effects on our community. Communities mirror the societies in which they exist and positive action is essential to counteract the many forms of inequality and abuses of power that exist in society.
 
 ## Enforcement
 
-This Code of Conduct is maintained and enforced by the hapi.js Code of Conduct committee. The committee is subject to the same conduct rules detailed here. Until the committee is formed, the policy will be enforced by members of the core contributors group.
+This Code of Conduct is maintained and enforced by the hapi.js core contributors group.
 
 ## Scope
 
@@ -66,11 +66,7 @@ If a community member engages in unacceptable behavior, the community organizers
 
 ## Contact Information
 
-You may contact one or more of the following:
-- [Eran Hammer](mailto:eran@hammer.io)
-- [Emily Rose](mailto:nexxy@symphonysubconscious.com)
-- Any member of the hapi.js Code of Conduct committee (once established)
-- Anonymously using [this form](https://docs.google.com/forms/d/14nhzflhhLld58ynDl5gUPl-_i0M6z-z34-Ct02DmDXM/viewform?c=0&w=1)
+You may contact one or more of the listed [team members](https://github.com/orgs/hapijs/people).
 
 ## License and attribution
 
